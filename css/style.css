@@ -1,0 +1,375 @@
+/* ==========================================================================
+   HOJA DE ESTILOS - CURSO-INTEGRADOR.CSS (HERENCIA DE CÚSPIDES ORIGINAL)
+   ========================================================================== */
+
+/* Variables heredadas de tu style.css principal para garantizar consistencia visual */
+.landing-course {
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-light);
+  font-family: var(--font-body);
+}
+
+.course-hero {
+  position: relative;
+  min-height: 90vh;
+  padding: 10rem 2rem 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(124, 165, 193, 0.1);
+}
+
+.hero-course-content {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.course-main-title {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--color-text-light);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.course-hero-sub {
+  font-size: 1.3rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 4rem;
+}
+
+/* --- FICHA TÉCNICA EN TABLA FLUIDA --- */
+.quick-specs-table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  background: rgba(11, 33, 55, 0.5);
+  border: 1px solid rgba(124, 165, 193, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.spec-cell {
+  display: table-cell;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid rgba(124, 165, 193, 0.15);
+}
+
+.spec-cell:last-child {
+  border-right: none;
+}
+
+.spec-cell i {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.spec-cell strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.spec-cell span {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+/* --- SECCIONES EXPLICATIVAS --- */
+.course-section {
+  position: relative;
+  padding: 8rem 2rem;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(124, 165, 193, 0.08);
+}
+
+.course-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.section-course-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--color-text-light);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.section-course-desc {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 750px;
+  line-height: 1.7;
+  margin-bottom: 4rem;
+}
+
+/* --- REQUISITOS GRID --- */
+.requirements-grid {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.req-card {
+  display: inline-block;
+  width: calc(33.333% - 2rem);
+  margin: 1rem;
+  vertical-align: top;
+  background: var(--color-bg-dark);
+  border: 1px solid rgba(124, 165, 193, 0.1);
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  text-align: left;
+  transition: border-color 0.3s ease;
+}
+
+.req-card:hover {
+  border-color: var(--color-primary);
+}
+
+.req-icon i {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.req-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.75rem;
+}
+
+.req-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --- CRONOGRAMA / TIMELINE --- */
+.course-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  border-left: 2px solid rgba(124, 165, 193, 0.15);
+  padding-left: 3rem;
+}
+
+.timeline-phase {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.timeline-phase:last-child {
+  margin-bottom: 0;
+}
+
+.phase-number {
+  position: absolute;
+  left: calc(-3rem - 24px);
+  top: 0;
+  background: var(--color-primary);
+  color: var(--color-bg-deep);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.phase-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.phase-body p {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* --- TABLA DE LOGÍSTICA --- */
+.logistics-table {
+  width: 100%;
+  border: 1px solid rgba(124, 165, 193, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-bg-dark);
+}
+
+.log-row {
+  display: table-row;
+  border-bottom: 1px solid rgba(124, 165, 193, 0.08);
+}
+
+.log-row:last-child {
+  border-bottom: none;
+}
+
+.log-label, .log-val {
+  display: table-cell;
+  padding: 1.5rem 2rem;
+  vertical-align: middle;
+}
+
+.log-label {
+  width: 30%;
+  font-family: var(--font-display);
+  color: var(--color-primary);
+  font-size: 1rem;
+  border-right: 1px solid rgba(124, 165, 193, 0.08);
+  background: rgba(5, 14, 24, 0.2);
+}
+
+.log-label i {
+  margin-right: 0.5rem;
+}
+
+.log-val {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* --- GEAR / EQUIPAMIENTO --- */
+.gear-split {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  gap: 2rem;
+}
+
+.gear-box {
+  display: table-cell;
+  width: 50%;
+  padding: 3rem;
+  border-radius: 8px;
+  background: var(--color-bg-dark);
+  border: 1px solid rgba(124, 165, 193, 0.08);
+}
+
+.gear-box.provided {
+  border-right: 1px solid rgba(124, 165, 193, 0.15);
+}
+
+.gear-box h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.gear-box.provided h3 { color: var(--color-primary); }
+.gear-box.personal h3 { color: var(--color-highlight); }
+
+.gear-box ul {
+  list-style: none;
+}
+
+.gear-box ul li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.gear-box ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* --- BLOQUE DE LLAMADO A LA ACCIÓN FINAL --- */
+.final-cta-block {
+  text-align: center;
+}
+
+.final-cta-block .section-course-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-box-wrapper {
+  max-width: 750px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, var(--color-bg-dark), rgba(24, 63, 111, 0.4));
+  border: 1px solid var(--color-primary);
+  padding: 4rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+}
+
+.cta-urgency {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.btn-nav-back {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  color: var(--color-primary) !important;
+  transition: all 0.3s ease;
+}
+
+.btn-nav-back:hover {
+  background: var(--color-primary);
+  color: var(--color-bg-deep) !important;
+}
+
+.course-footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(124, 165, 193, 0.08);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* --- INTERRUPTOR RESPONSIVE --- */
+@media (max-width: 992px) {
+  .course-main-title { font-size: 2.8rem; }
+  .quick-specs-table, .gear-split, .log-row, .logistics-table { display: block; width: 100%; }
+  .spec-cell, .gear-box, .log-label, .log-val { display: block; width: 100%; text-align: left; }
+  .spec-cell { border-right: none; border-bottom: 1px solid rgba(124, 165, 193, 0.15); }
+  .gear-box.provided { border-right: none; border-bottom: 1px solid rgba(124, 165, 193, 0.15); }
+  .req-card { width: calc(50% - 2rem); }
+  .log-label { border-right: none; border-bottom: 1px solid rgba(124, 165, 193, 0.08); }
+}
+
+@media (max-width: 768px) {
+  .req-card { width: 100%; margin: 1rem 0; }
+  .course-timeline { padding-left: 1.5rem; }
+  .phase-number { position: relative; left: 0; top: 0; display: inline-block; margin-bottom: 1rem; }
+}
