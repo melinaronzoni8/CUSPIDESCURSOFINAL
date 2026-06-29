@@ -53,3 +53,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   }
 });
+/**
+ * ==========================================================================
+ * EXTENSIÓN DE CONTROL PARA LA PÁGINA DEL CURSO INTEGRADOR
+ * Ejecuta automáticamente las estrellas y observadores en la nueva vista.
+ * ==========================================================================
+ */
+
+// Volvemos a escuchar el evento de carga para inicializar de forma segura los elementos específicos del curso
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // Si estamos dentro de la landing del curso, nos aseguramos de activar el fondo estelar en sus nuevos canvas
+  if (document.body.classList.contains('landing-course')) {
+    
+    // Si la función nativa de estrellas existe en script.js, la llamamos con un leve retardo para evitar fallos de cálculo
+    if (typeof initStarCanvasBackground === 'function') {
+      setTimeout(() => {
+        initStarCanvasBackground();
+      }, 60);
+    }
+
+    // Ejecuta de inmediato el Intersection Observer para animar las 6 secciones nuevas con el efecto fade-in
+    if (typeof initIntersectionObserverReveal === 'function') {
+      initIntersectionObserverReveal();
+    }
+  }
+});
