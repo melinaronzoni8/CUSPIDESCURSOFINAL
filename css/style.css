@@ -201,7 +201,7 @@ body {
   box-shadow: 0 0 15px var(--color-primary);
   animation: starPulse 2s infinite ease-in-out;
 }
-@keyframes starPulse {
+starPulse {
   0%, 100% { transform: scale(0.8); opacity: 0.6; }
   50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 25px var(--color-highlight); }
 }
