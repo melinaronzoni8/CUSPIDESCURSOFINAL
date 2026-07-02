@@ -1,509 +1,284 @@
 /* ==========================================================================
-   HOJA DE ESTILOS - CURSO-INTEGRADOR.CSS (HERENCIA DE CÚSPIDES ORIGINAL)
+   CÚSPIDES DESIGN SYSTEM - CENTRAL CORE
    ========================================================================== */
+:root {
+  --color-bg-deep: #050E18;
+  --color-bg-dark: #0B2137;
+  --color-primary: #7CA5C1;
+  --color-highlight: #ff841f;
+  --color-text-light: #ffffff;
+  --color-text-muted: rgba(236, 237, 235, 0.6);
+  
+  --font-display: 'Russo One', sans-serif;
+  --font-body: 'Lato', sans-serif;
+  
+  --site-max-width: 1200px;
+  --site-padding-inline: 2rem;
+}
 
-/* Variables heredadas de tu style.css principal para garantizar consistencia visual */
-.landing-course {
+body {
+  margin: 0;
+  padding: 0;
   background-color: var(--color-bg-deep);
   color: var(--color-text-light);
   font-family: var(--font-body);
+  overflow-x: hidden;
 }
 
-.course-hero {
-  position: relative;
-  min-height: 90vh;
-  padding: 10rem 2rem 6rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(124, 165, 193, 0.1);
-}
-
-.hero-course-content {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 5;
-}
-
-.course-main-title {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  color: var(--color-text-light);
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 2px;
-  line-height: 1.1;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-}
-
-.course-hero-sub {
-  font-size: 1.3rem;
-  color: var(--color-text-muted);
-  line-height: 1.7;
-  font-weight: 300;
-  margin-bottom: 4rem;
-}
-
-/* --- FICHA TÉCNICA EN TABLA FLUIDA --- */
-.quick-specs-table {
-  display: table;
+.ui-container {
   width: 100%;
-  table-layout: fixed;
-  background: rgba(11, 33, 55, 0.5);
-  border: 1px solid rgba(124, 165, 193, 0.2);
-  border-radius: 8px;
-  backdrop-filter: blur(8px);
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding: 0 var(--site-padding-inline);
+  box-sizing: border-box;
 }
 
-.spec-cell {
-  display: table-cell;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  border-right: 1px solid rgba(124, 165, 193, 0.15);
+/* ==========================================================================
+   ESTILOS DEL DASHBOARD DE LA BIBLIOTECA
+   ========================================================================== */
+.ui-dashboard-header {
+  padding: 5rem 0 3rem 0;
+  border-bottom: 1px solid rgba(124, 165, 193, 0.15);
+  background: radial-gradient(circle at 80% 20%, rgba(11, 33, 55, 0.4) 0%, transparent 60%);
 }
-
-.spec-cell:last-child {
-  border-right: none;
-}
-
-.spec-cell i {
-  font-size: 1.8rem;
-  color: var(--color-primary);
-  margin-bottom: 0.75rem;
-  display: block;
-}
-
-.spec-cell strong {
-  display: block;
+.ui-dashboard-tag {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: var(--color-highlight);
   font-family: var(--font-display);
-  font-size: 0.9rem;
-  color: var(--color-text-light);
-  letter-spacing: 0.5px;
+}
+.ui-dashboard-title {
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  margin: 0.5rem 0;
   text-transform: uppercase;
-  margin-bottom: 0.25rem;
 }
-
-.spec-cell span {
-  font-size: 0.95rem;
+.ui-dashboard-desc {
   color: var(--color-text-muted);
-}
-
-/* --- SECCIONES EXPLICATIVAS --- */
-.course-section {
-  position: relative;
-  padding: 8rem 2rem;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(124, 165, 193, 0.08);
-}
-
-.course-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 3;
-}
-
-.section-course-title {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  color: var(--color-text-light);
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-}
-
-.section-course-desc {
-  font-size: 1.15rem;
-  color: var(--color-text-muted);
-  max-width: 750px;
-  line-height: 1.7;
-  margin-bottom: 4rem;
-}
-
-/* --- REQUISITOS GRID --- */
-.requirements-grid {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-.req-card {
-  display: inline-block;
-  width: calc(33.333% - 2rem);
-  margin: 1rem;
-  vertical-align: top;
-  background: var(--color-bg-dark);
-  border: 1px solid rgba(124, 165, 193, 0.1);
-  padding: 2.5rem 2rem;
-  border-radius: 8px;
-  text-align: left;
-  transition: border-color 0.3s ease;
-}
-
-.req-card:hover {
-  border-color: var(--color-primary);
-}
-
-.req-icon i {
-  font-size: 2rem;
-  color: var(--color-primary);
-  margin-bottom: 1.5rem;
-}
-
-.req-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  color: var(--color-text-light);
-  margin-bottom: 0.75rem;
-}
-
-.req-card p {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-
-/* --- CRONOGRAMA / TIMELINE --- */
-.course-timeline {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  border-left: 2px solid rgba(124, 165, 193, 0.15);
-  padding-left: 3rem;
-}
-
-.timeline-phase {
-  position: relative;
-  margin-bottom: 4rem;
-}
-
-.timeline-phase:last-child {
-  margin-bottom: 0;
-}
-
-.phase-number {
-  position: absolute;
-  left: calc(-3rem - 24px);
-  top: 0;
-  background: var(--color-primary);
-  color: var(--color-bg-deep);
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 4px;
-  letter-spacing: 0.5px;
-}
-
-.phase-body h3 {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  color: var(--color-text-light);
-  margin-bottom: 0.5rem;
-}
-
-.phase-body p {
   font-size: 1.1rem;
-  color: var(--color-text-muted);
-  line-height: 1.65;
-}
-
-/* --- TABLA DE LOGÍSTICA --- */
-.logistics-table {
-  width: 100%;
-  border: 1px solid rgba(124, 165, 193, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--color-bg-dark);
-}
-
-.log-row {
-  display: table-row;
-  border-bottom: 1px solid rgba(124, 165, 193, 0.08);
-}
-
-.log-row:last-child {
-  border-bottom: none;
-}
-
-.log-label, .log-val {
-  display: table-cell;
-  padding: 1.5rem 2rem;
-  vertical-align: middle;
-}
-
-.log-label {
-  width: 30%;
-  font-family: var(--font-display);
-  color: var(--color-primary);
-  font-size: 1rem;
-  border-right: 1px solid rgba(124, 165, 193, 0.08);
-  background: rgba(5, 14, 24, 0.2);
-}
-
-.log-label i {
-  margin-right: 0.5rem;
-}
-
-.log-val {
-  font-size: 1.05rem;
-  color: var(--color-text-light);
-  line-height: 1.6;
-}
-
-/* --- GEAR / EQUIPAMIENTO --- */
-.gear-split {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  gap: 2rem;
-}
-
-.gear-box {
-  display: table-cell;
-  width: 50%;
-  padding: 3rem;
-  border-radius: 8px;
-  background: var(--color-bg-dark);
-  border: 1px solid rgba(124, 165, 193, 0.08);
-}
-
-.gear-box.provided {
-  border-right: 1px solid rgba(124, 165, 193, 0.15);
-}
-
-.gear-box h3 {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
-}
-
-.gear-box.provided h3 { color: var(--color-primary); }
-.gear-box.personal h3 { color: var(--color-highlight); }
-
-.gear-box ul {
-  list-style: none;
-}
-
-.gear-box ul li {
-  position: relative;
-  padding-left: 1.75rem;
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-  color: var(--color-text-muted);
+  max-width: 700px;
   line-height: 1.5;
 }
 
-.gear-box ul li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--color-primary);
+.ui-category-section {
+  margin: 5rem 0;
+}
+.ui-category-title {
+  font-family: var(--font-display);
   font-size: 1.5rem;
-  line-height: 1;
+  color: var(--color-primary);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
 }
 
-/* --- BLOQUE DE LLAMADO A LA ACCIÓN FINAL --- */
-.final-cta-block {
-  text-align: center;
+.ui-card-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.ui-element-box {
+  background: rgba(11, 33, 55, 0.3);
+  border: 1px solid rgba(124, 165, 193, 0.08);
+  border-radius: 6px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ui-element-label {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 0.7rem;
+  color: var(--color-highlight);
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-.final-cta-block .section-course-desc {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-box-wrapper {
-  max-width: 750px;
-  margin: 0 auto;
-  background: linear-gradient(135deg, var(--color-bg-dark), rgba(24, 63, 111, 0.4));
-  border: 1px solid var(--color-primary);
-  padding: 4rem 3rem;
-  border-radius: 12px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-}
-
-.cta-urgency {
-  font-size: 1.2rem;
-  color: var(--color-text-light);
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-  font-style: italic;
-}
-
-.btn-nav-back {
+/* ==========================================================================
+   CATEGORÍA 1: TIPOGRAFÍAS
+   ========================================================================== */
+.ui-tag {
   display: inline-block;
-  padding: 0.5rem 1.2rem;
-  border: 1px solid var(--color-primary);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+.ui-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.1;
+}
+.ui-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   CATEGORÍA 2: BOTONES Y ANIMACIONES (HOVER EFECTOS)
+   ========================================================================== */
+.btn-primary {
+  font-family: var(--font-display);
+  background: transparent;
+  color: var(--color-text-light);
+  border: 2px solid var(--color-highlight);
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  box-shadow: 0 0 15px rgba(255, 132, 31, 0.2);
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: var(--color-highlight);
+  transition: left 0.4s cubic-bezier(0.3, 1, 0.2, 1);
+  z-index: -1;
+}
+.btn-primary:hover {
+  color: var(--color-bg-deep);
+  box-shadow: 0 0 25px rgba(255, 132, 31, 0.5);
+}
+.btn-primary:hover::before {
+  left: 0;
+}
+
+.btn-secondary {
+  font-family: var(--font-body);
+  font-weight: 700;
+  background: rgba(124, 165, 193, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(124, 165, 193, 0.3);
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
   border-radius: 4px;
-  color: var(--color-primary) !important;
   transition: all 0.3s ease;
 }
-
-.btn-nav-back:hover {
+.btn-secondary:hover {
   background: var(--color-primary);
-  color: var(--color-bg-deep) !important;
+  color: var(--color-bg-deep);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(124, 165, 193, 0.15);
 }
 
-.course-footer {
-  text-align: center;
-  padding: 3rem 2rem;
-  border-top: 1px solid rgba(124, 165, 193, 0.08);
+/* ==========================================================================
+   CATEGORÍA 3: COMPONENTE INTERACTIVO DE LIENZO Y NODOS
+   ========================================================================== */
+.ui-canvas-preview {
+  grid-template-columns: 1fr;
+}
+.spec-node-box {
+  min-height: 220px;
+  background: radial-gradient(circle, rgba(11,33,55,0.6) 0%, transparent 70%);
+}
+.ui-interactive-node {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.ui-node-pulse {
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--color-primary);
+  animation: starPulse 2s infinite ease-in-out;
+}
+@keyframes starPulse {
+  0%, 100% { transform: scale(0.8); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 25px var(--color-highlight); }
+}
+
+.ui-node-tooltip {
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 260px;
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-deep) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 50;
+}
+.ui-node-tooltip h4 {
+  font-family: var(--font-display);
+  margin: 0 0 0.4rem 0;
+  font-size: 1rem;
+}
+.ui-node-tooltip p {
+  margin: 0; font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.4;
+}
+.ui-interactive-node:hover .ui-node-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================================
+   CATEGORÍA 4: TARJETAS GLASSMORPHISM
+   ========================================================================== */
+.ui-glass-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255,255,255,0.07);
+  backdrop-filter: blur(16px);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: border-color 0.4s ease, transform 0.4s ease;
+}
+.ui-glass-card h3 {
+  font-family: var(--font-display);
+  margin: 0 0 0.75rem 0;
+  color: var(--color-text-light);
+}
+.ui-glass-card p {
+  margin: 0; color: var(--color-text-muted); line-height: 1.5; font-size: 0.95rem;
+}
+.ui-glass-card:hover {
+  border-color: rgba(124, 165, 193, 0.3);
+  transform: translateY(-5px);
+}
+
+/* ==========================================================================
+   CATEGORÍA 5: ANIMACIONES DE ENTRADA (SCROLL REVEAL CLASES)
+   ========================================================================== */
+.ui-reveal-demo-box {
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.02);
+  border-left: 3px solid var(--color-primary);
   font-size: 0.9rem;
   color: var(--color-text-muted);
 }
 
-/* --- INTERRUPTOR RESPONSIVE --- */
-@media (max-width: 992px) {
-  .course-main-title { font-size: 2.8rem; }
-  .quick-specs-table, .gear-split, .log-row, .logistics-table { display: block; width: 100%; }
-  .spec-cell, .gear-box, .log-label, .log-val { display: block; width: 100%; text-align: left; }
-  .spec-cell { border-right: none; border-bottom: 1px solid rgba(124, 165, 193, 0.15); }
-  .gear-box.provided { border-right: none; border-bottom: 1px solid rgba(124, 165, 193, 0.15); }
-  .req-card { width: calc(50% - 2rem); }
-  .log-label { border-right: none; border-bottom: 1px solid rgba(124, 165, 193, 0.08); }
+/* Estados de la animación controlados por el JS */
+.ui-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-
-@media (max-width: 768px) {
-  .req-card { width: 100%; margin: 1rem 0; }
-  .course-timeline { padding-left: 1.5rem; }
-  .phase-number { position: relative; left: 0; top: 0; display: inline-block; margin-bottom: 1rem; }
-}
-/* ==========================================================================
-   ESTILOS COMPLEMENTARIOS PARA LA LANDING DEL CURSO INTEGRADOR
-   ========================================================================== */
-
-.course-hero {
-  position: relative;
-  min-height: 90vh;
-  padding: 10rem 2rem 6rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-course-content {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 5;
-}
-
-.course-main-title {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  color: var(--color-text-light);
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 2px;
-  line-height: 1.1;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-}
-
-.course-hero-sub {
-  font-size: 1.3rem;
-  color: var(--color-text-muted);
-  line-height: 1.7;
-  font-weight: 300;
-  margin-bottom: 4rem;
-}
-
-/* Ficha técnica rápida estilo tabla */
-.quick-specs-table {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  background: rgba(11, 33, 55, 0.5);
-  border: 1px solid rgba(124, 165, 193, 0.2);
-  border-radius: 8px;
-  backdrop-filter: blur(8px);
-}
-
-.spec-cell {
-  display: table-cell;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  border-right: 1px solid rgba(124, 165, 193, 0.15);
-}
-
-.spec-cell:last-child { border-right: none; }
-.spec-cell i { font-size: 1.8rem; color: var(--color-primary); margin-bottom: 0.75rem; display: block; }
-.spec-cell strong { display: block; font-family: var(--font-display); font-size: 0.9rem; color: var(--color-text-light); text-transform: uppercase; margin-bottom: 0.25rem; }
-.spec-cell span { font-size: 0.95rem; color: var(--color-text-muted); }
-
-/* Contenedores globales de secciones */
-.course-section {
-  position: relative;
-  padding: 8rem 2rem;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(124, 165, 193, 0.08);
-}
-
-.course-container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 3; }
-.section-course-title { font-family: var(--font-display); font-size: 2.2rem; color: var(--color-text-light); margin-top: 1rem; margin-bottom: 1.5rem; }
-.section-course-desc { font-size: 1.15rem; color: var(--color-text-muted); max-width: 750px; line-height: 1.7; margin-bottom: 4rem; }
-
-/* Requisitos Cards (Inline-block seguro) */
-.requirements-grid { display: block; width: 100%; text-align: center; }
-.req-card {
-  display: inline-block; width: calc(33.333% - 2rem); margin: 1rem; vertical-align: top;
-  background: var(--color-bg-dark); border: 1px solid rgba(124, 165, 193, 0.1);
-  padding: 2.5rem 2rem; border-radius: 8px; text-align: left; transition: border-color 0.3s ease;
-}
-.req-card:hover { border-color: var(--color-primary); }
-.req-icon i { font-size: 2rem; color: var(--color-primary); margin-bottom: 1.5rem; }
-.req-card h3 { font-family: var(--font-display); font-size: 1.15rem; color: var(--color-text-light); margin-bottom: 0.75rem; }
-.req-card p { font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; }
-
-/* Línea de tiempo / Cronograma */
-.course-timeline { max-width: 800px; margin: 0 auto; position: relative; border-left: 2px solid rgba(124, 165, 193, 0.15); padding-left: 3rem; text-align: left; }
-.timeline-phase { position: relative; margin-bottom: 4rem; }
-.timeline-phase:last-child { margin-bottom: 0; }
-.phase-number { position: absolute; left: calc(-3rem - 24px); top: 0; background: var(--color-primary); color: var(--color-bg-deep); font-family: var(--font-display); font-size: 0.85rem; padding: 6px 12px; border-radius: 4px; font-weight: bold; }
-.phase-body h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--color-text-light); margin-bottom: 0.5rem; }
-.phase-body p { font-size: 1.1rem; color: var(--color-text-muted); line-height: 1.65; }
-
-/* Logística Estilo Tabla */
-.logistics-table { width: 100%; border: 1px solid rgba(124, 165, 193, 0.1); border-radius: 8px; overflow: hidden; background: var(--color-bg-dark); }
-.log-row { display: table-row; border-bottom: 1px solid rgba(124, 165, 193, 0.08); }
-.log-row:last-child { border-bottom: none; }
-.log-label, .log-val { display: table-cell; padding: 1.5rem 2rem; vertical-align: middle; text-align: left; }
-.log-label { width: 30%; font-family: var(--font-display); color: var(--color-primary); font-size: 1rem; border-right: 1px solid rgba(124, 165, 193, 0.08); background: rgba(5, 14, 24, 0.2); }
-.log-val { font-size: 1.05rem; color: var(--color-text-light); line-height: 1.6; }
-
-/* Equipamiento Dividido */
-.gear-split { display: table; width: 100%; table-layout: fixed; }
-.gear-box { display: table-cell; width: 50%; padding: 3rem; background: var(--color-bg-dark); text-align: left; }
-.gear-box.provided { border-right: 1px solid rgba(124, 165, 193, 0.15); }
-.gear-box h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 1.5rem; }
-.gear-box.provided h3 { color: var(--color-primary); }
-.gear-box.personal h3 { color: var(--color-highlight); }
-.gear-box ul { list-style: none; }
-.gear-box ul li { position: relative; padding-left: 1.75rem; margin-bottom: 1rem; font-size: 1.05rem; color: var(--color-text-muted); }
-.gear-box ul li::before { content: "•"; position: absolute; left: 0; top: 0; color: var(--color-primary); font-size: 1.5rem; line-height: 1; }
-
-/* Caja de Conversión de la Landing */
-.final-cta-block { text-align: center; }
-.final-cta-block .section-course-desc { margin-left: auto; margin-right: auto; }
-.cta-box-wrapper { max-width: 750px; margin: 0 auto; background: linear-gradient(135deg, var(--color-bg-dark), rgba(24, 63, 111, 0.4)); border: 1px solid var(--color-primary); padding: 4rem 3rem; border-radius: 12px; }
-.cta-urgency { font-size: 1.2rem; color: var(--color-text-light); margin-bottom: 2.5rem; font-style: italic; }
-.course-footer { text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(124, 165, 193, 0.08); font-size: 0.9rem; color: var(--color-text-muted); }
-
-/* Adaptabilidad para Móviles (Responsive) */
-@media (max-width: 992px) {
-  .course-main-title { font-size: 2.8rem; }
-  .quick-specs-table, .gear-split, .log-row, .logistics-table { display: block; width: 100%; }
-  .spec-cell, .gear-box, .log-label, .log-val { display: block; width: 100%; text-align: left; }
-  .spec-cell, .gear-box.provided, .log-label { border-right: none; border-bottom: 1px solid rgba(124, 165, 193, 0.15); }
-  .req-card { width: calc(50% - 2rem); }
-}
-@media (max-width: 768px) {
-  .req-card { width: 100%; margin: 1rem 0; }
-  .course-timeline { padding-left: 1.5rem; }
-  .phase-number { position: relative; left: 0; top: 0; display: inline-block; margin-bottom: 1rem; }
+.ui-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
